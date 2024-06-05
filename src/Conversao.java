@@ -23,7 +23,7 @@ public class Conversao {
             Moedas moedas = new Gson().fromJson(json, Moedas.class);
             return new Moedas(moedas.base_code(), moedas.target_code(), moedas.conversion_rate(), moedas.conversion_result(), valor);
 
-        } catch (IOException | InterruptedException e) {
+        } catch (IOException | InterruptedException | IllegalStateException e) {
             throw new RuntimeException(e);
         }
     }
